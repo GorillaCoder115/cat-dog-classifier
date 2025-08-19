@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dog vs Cat Classifier</title>
+</head>
+<body>
+    <h1>Upload a Dog or Cat Image</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="img" accept="image/*" required>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+        <h2>Prediction: {{ prediction }}</h2>
+        <img src="{{ url_for('static', filename=img_filename) }}" width="300">
+        <h3>Visual Data Representations</h3>
+        <img src="{{ url_for('static', filename='accuracy_plot.png') }}" width="300">
+        <img src="{{ url_for('static', filename='confusion_matrix.png') }}" width="300">
+        <img src="{{ url_for('static', filename='class_distribution.png') }}" width="300">
+    {% endif %}
+</body>
+</html>
