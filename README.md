@@ -1,9 +1,11 @@
 #Instructions on how to use this application
 
-#First Download PyCharm
+#First Download Python onto your device
+
+#Second Download PyCharm
 
 
-#Enter these commands into your terminal in this order
+#Open Pycharm and enter these commands into your terminal in this order
 1. pip install -r requirements.txt
 2. python train_model.py
 3. python app.py
