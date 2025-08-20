@@ -1,5 +1,5 @@
 Instructions on how to use this application
-Enter this commands into your terminal in this order
+Enter these commands into your terminal in this order
 1. pip install -r requirements.txt
 2. python train_model.py
 3. python app.py
