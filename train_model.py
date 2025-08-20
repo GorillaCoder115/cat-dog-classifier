@@ -7,15 +7,14 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 
-# -------------------------
-# Ensure static folder exists
-# -------------------------
+
+
+
 STATIC_DIR = "static"
 os.makedirs(STATIC_DIR, exist_ok=True)
 
-# -------------------------
-# 1. Data Preprocessing
-# -------------------------
+
+
 train_dir = 'data/train'
 img_size = (150, 150)
 batch_size = 32
@@ -41,9 +40,8 @@ val_gen = datagen.flow_from_directory(
     subset='validation'
 )
 
-# -------------------------
-# 2. Build CNN Model
-# -------------------------
+
+
 model = Sequential([
     Conv2D(32, (3,3), activation='relu', input_shape=(150,150,3)),
     MaxPooling2D(2,2),
@@ -59,23 +57,20 @@ model = Sequential([
 
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
-# -------------------------
-# 3. Train Model
-# -------------------------
+
+
 history = model.fit(
     train_gen,
     validation_data=val_gen,
     epochs=10
 )
 
-# Save model
+
 model.save('dog_cat_model.h5')
 
-# -------------------------
-# 4. Visualizations
-# -------------------------
 
-# Accuracy plot
+
+
 plt.figure()
 plt.plot(history.history['accuracy'], label='Train Accuracy')
 plt.plot(history.history['val_accuracy'], label='Validation Accuracy')
@@ -84,7 +79,7 @@ plt.legend()
 plt.savefig(os.path.join(STATIC_DIR, "accuracy_plot.png"))
 plt.close()
 
-# Confusion Matrix
+
 val_gen.reset()
 predictions = (model.predict(val_gen) > 0.5).astype("int32")
 cm = confusion_matrix(val_gen.classes, predictions)
@@ -94,7 +89,7 @@ plt.title("Confusion Matrix")
 plt.savefig(os.path.join(STATIC_DIR, "confusion_matrix.png"))
 plt.close()
 
-# Class Distribution
+
 labels = []
 for folder in os.listdir(train_dir):
     folder_path = os.path.join(train_dir, folder)
