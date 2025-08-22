@@ -100,3 +100,26 @@ plt.savefig(os.path.join(STATIC_DIR, "class_distribution.png"))
 plt.close()
 
 print("Model and visualizations saved successfully!")
+
+
+
+# SOURCES FOR THIS CODE: 
+
+#machinelearningmastery. (2025b). How to classify photos of dogs and cats (with 97% accuracy) - machinelearningmastery.com. https://machinelearningmastery.com/how-to-develop-a-convolutional-neural-network-to-classify-photos-of-dogs-and-cats/ 
+
+ 
+
+#Team, K. (2025). Keras documentation: Image Classification From Scratch. https://keras.io/examples/vision/image_classification_from_scratch/ 
+
+#GeeksforGeeks. (2025, July 23). Cat & dog classification using Convolutional Neural Network in python. https://www.geeksforgeeks.org/deep-learning/cat-dog-classification-using-convolutional-neural-network-in-python/ 
+
+
+
+
+
+
+
+
+
+
+
