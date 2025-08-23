@@ -4,8 +4,8 @@
 
 #Second Download PyCharm
 
-
-#Open Pycharm and enter these commands into your terminal in this order
+#Open Pycharm and start a new project with github link 
+#Enter these commands into your terminal in this order
 1. pip install -r requirements.txt
 2. python train_model.py
 3. python app.py
